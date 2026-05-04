@@ -16,23 +16,23 @@
   header {
     background: white;
     text-align: center;
-    padding: 35px 20px 55px;
+    padding: 40px 20px 60px;
     border-bottom: 1px solid #ddd;
   }
 
   .logo {
-    width: 220px;
-    max-width: 80%;
-    margin-bottom: 20px;
+    width: 300px;
+    max-width: 90%;
+    margin-bottom: 25px;
   }
 
   h1 {
-    font-size: 44px;
+    font-size: 46px;
     margin: 10px 0;
   }
 
   h2 {
-    font-size: 28px;
+    font-size: 30px;
     text-align: center;
   }
 
@@ -45,24 +45,23 @@
 
   .button {
     display: inline-block;
-    background: #2e7d32;
+    background: #b22222;
     color: white;
-    text-decoration: none;
-    padding: 22px 34px;
+    padding: 22px 36px;
     border-radius: 10px;
     font-size: 22px;
-    margin-top: 25px;
+    margin-top: 30px;
     font-weight: bold;
     border: none;
     cursor: pointer;
   }
 
   .button:hover {
-    background: #256628;
+    background: #8b1a1a;
   }
 
   .section {
-    padding: 50px 20px;
+    padding: 55px 20px;
     text-align: center;
   }
 
@@ -90,10 +89,9 @@
   }
 
   .highlight {
-    background: #f28c28;
+    background: #b22222;
     color: white;
-    padding: 45px 20px;
-    text-align: center;
+    padding: 50px 20px;
   }
 
   .highlight h2 {
@@ -121,26 +119,23 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0,0,0,0.6);
   }
 
   .modal-content {
     background: white;
     max-width: 520px;
-    margin: 7% auto;
+    margin: 6% auto;
     padding: 30px;
     border-radius: 16px;
-    text-align: left;
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   }
 
   .modal-content h2 {
-    text-align: left;
     margin-top: 0;
   }
 
-  .modal-content input,
-  .modal-content textarea {
+  input, textarea {
     width: 100%;
     padding: 14px;
     margin: 8px 0 16px;
@@ -150,7 +145,7 @@
     box-sizing: border-box;
   }
 
-  .modal-content textarea {
+  textarea {
     height: 120px;
   }
 
@@ -162,7 +157,7 @@
 
   .submit-button {
     width: 100%;
-    background: #2e7d32;
+    background: #b22222;
     color: white;
     padding: 16px;
     border: none;
@@ -170,6 +165,10 @@
     font-size: 19px;
     font-weight: bold;
     cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background: #8b1a1a;
   }
 
   .small-text {
@@ -204,7 +203,7 @@
   <h2>Dette handler om trygghet, skolevei og nærmiljø</h2>
   <p>
     Broen binder øvre og nedre Borgen sammen. Den brukes av barn, ungdom, foreldre,
-    pendlere og beboere som går eller sykler i nærmiljøet.
+    pendlere og beboere hver eneste dag.
   </p>
 </section>
 
@@ -219,12 +218,12 @@
 
     <div class="card">
       <h3>Tilgang til kollektiv</h3>
-      <p>Broen er en viktig forbindelse til buss og tog for beboere på Borgen.</p>
+      <p>Viktig forbindelse til buss og tog for hele nabolaget.</p>
     </div>
 
     <div class="card">
       <h3>Et samlet nærmiljø</h3>
-      <p>Broen knytter boligområder sammen og gjør det lettere å gå og sykle.</p>
+      <p>Knytter øvre og nedre Borgen sammen.</p>
     </div>
   </div>
 </section>
@@ -233,9 +232,9 @@
   <h2>Bilder av gangbroen</h2>
 
   <div class="cards gallery">
-    <img src="bro1.jpg" alt="Gangbroen ved Rønningen skole">
-    <img src="bro2.jpg" alt="Gangbroen på Borgen">
-    <img src="bro3.jpg" alt="Borgenveien gang- og sykkelbru">
+    <img src="bro1.jpg">
+    <img src="bro2.jpg">
+    <img src="bro3.jpg">
   </div>
 </section>
 
@@ -243,12 +242,8 @@
   <h2>Hva skjer nå?</h2>
 
   <p>
-    Asker kommune vurderer å fjerne Borgenveien gang- og sykkelbru som del av et redusert
-    vedlikeholdsprogram. Vi mener broen fortsatt er viktig for barna, beboerne og nærmiljøet.
-  </p>
-
-  <p>
-    Send innspill dersom du mener broen bør bevares eller erstattes.
+    Asker kommune vurderer å fjerne gangbroen. Vi mener dette er feil prioritering
+    og at broen må bevares eller erstattes.
   </p>
 </section>
 
@@ -262,14 +257,9 @@
 
     <h2>Signer oppropet</h2>
 
-    <p>
-      Fyll inn navn og melding. Innsendingen sendes direkte til Borgen Vel.
-    </p>
-
     <form action="https://formsubmit.co/styret@borgenvel.no" method="POST">
-      <input type="hidden" name="_subject" value="Signatur: Bevar gangbroen ved Rønningen skole">
+      <input type="hidden" name="_subject" value="Signatur: Bevar gangbroen">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
 
       <label>Navn</label>
       <input type="text" name="Navn" required>
@@ -278,34 +268,28 @@
       <input type="email" name="E-post">
 
       <label>Melding</label>
-      <textarea name="Melding" required>Jeg støtter oppropet for å beholde gangbroen ved Rønningen skole.</textarea>
+      <textarea name="Melding">Jeg støtter oppropet for å beholde gangbroen.</textarea>
 
       <button class="submit-button" type="submit">
         Send signatur
       </button>
 
-      <p class="small-text">
-        Ved å sende inn godtar du at Borgen Vel mottar innspillet ditt på e-post.
-      </p>
     </form>
   </div>
 </div>
 
 <script>
-  function openModal() {
-    document.getElementById("signupModal").style.display = "block";
+function openModal() {
+  document.getElementById("signupModal").style.display = "block";
+}
+function closeModal() {
+  document.getElementById("signupModal").style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target === document.getElementById("signupModal")) {
+    closeModal();
   }
-
-  function closeModal() {
-    document.getElementById("signupModal").style.display = "none";
-  }
-
-  window.onclick = function(event) {
-    const modal = document.getElementById("signupModal");
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  }
+}
 </script>
 
 </body>
