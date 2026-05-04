@@ -16,17 +16,18 @@
   header {
     background: white;
     text-align: center;
-    padding: 35px 20px 50px;
+    padding: 35px 20px 55px;
     border-bottom: 1px solid #ddd;
   }
 
   .logo {
-    width: 120px;
+    width: 220px;
+    max-width: 80%;
     margin-bottom: 20px;
   }
 
   h1 {
-    font-size: 42px;
+    font-size: 44px;
     margin: 10px 0;
   }
 
@@ -47,11 +48,13 @@
     background: #2e7d32;
     color: white;
     text-decoration: none;
-    padding: 16px 26px;
-    border-radius: 8px;
-    font-size: 18px;
-    margin-top: 20px;
+    padding: 22px 34px;
+    border-radius: 10px;
+    font-size: 22px;
+    margin-top: 25px;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
   }
 
   .button:hover {
@@ -87,11 +90,20 @@
   }
 
   .highlight {
-    background: #fff3cd;
-    padding: 35px 20px;
+    background: #f28c28;
+    color: white;
+    padding: 45px 20px;
     text-align: center;
-    border-top: 1px solid #ead48b;
-    border-bottom: 1px solid #ead48b;
+  }
+
+  .highlight h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+  }
+
+  .highlight p {
+    font-size: 21px;
+    font-weight: bold;
   }
 
   footer {
@@ -99,6 +111,70 @@
     padding: 35px 20px;
     color: #666;
     font-size: 14px;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+  }
+
+  .modal-content {
+    background: white;
+    max-width: 520px;
+    margin: 7% auto;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .modal-content h2 {
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .modal-content input,
+  .modal-content textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .modal-content textarea {
+    height: 120px;
+  }
+
+  .close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .submit-button {
+    width: 100%;
+    background: #2e7d32;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .small-text {
+    font-size: 13px;
+    color: #666;
   }
 </style>
 </head>
@@ -119,9 +195,9 @@
     Nå vurderer Asker kommune å rive broen – uten å erstatte den.
   </p>
 
-  <a class="button" href="mailto:post@borgenvel.com?subject=Innspill om gangbroen ved Rønningen skole">
-    Send innspill for å beholde broen
-  </a>
+  <button class="button" onclick="openModal()">
+    Signer opprop for å beholde broen, trykk her
+  </button>
 </header>
 
 <section class="highlight">
@@ -172,17 +248,65 @@
   </p>
 
   <p>
-    Send gjerne innspill dersom du mener broen bør bevares eller erstattes.
+    Send innspill dersom du mener broen bør bevares eller erstattes.
   </p>
-
-  <a class="button" href="mailto:post@borgenvel.com?subject=Innspill om gangbroen ved Rønningen skole">
-    Jeg vil beholde broen
-  </a>
 </section>
 
 <footer>
   Borgen Vel • For et trygt og godt nærmiljø
 </footer>
+
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h2>Signer oppropet</h2>
+
+    <p>
+      Fyll inn navn og melding. Innsendingen sendes direkte til Borgen Vel.
+    </p>
+
+    <form action="https://formsubmit.co/styret@borgenvel.no" method="POST">
+      <input type="hidden" name="_subject" value="Signatur: Bevar gangbroen ved Rønningen skole">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <label>Navn</label>
+      <input type="text" name="Navn" required>
+
+      <label>E-post</label>
+      <input type="email" name="E-post">
+
+      <label>Melding</label>
+      <textarea name="Melding" required>Jeg støtter oppropet for å beholde gangbroen ved Rønningen skole.</textarea>
+
+      <button class="submit-button" type="submit">
+        Send signatur
+      </button>
+
+      <p class="small-text">
+        Ved å sende inn godtar du at Borgen Vel mottar innspillet ditt på e-post.
+      </p>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById("signupModal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("signupModal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("signupModal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
 
 </body>
 </html>
