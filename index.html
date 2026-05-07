@@ -335,15 +335,12 @@
 
     <h2>Signer oppropet</h2>
 
-    <form action="https://formsubmit.co/styret@borgenvel.no" method="POST" onsubmit="disableSubmitButton(this)">
-      <input type="hidden" name="_subject" value="Signatur: Bevar gangbrua">
-      <input type="hidden" name="_captcha" value="false">
-
+    <form id="signForm">
       <label>Navn</label>
       <input type="text" name="Navn" required>
 
       <label>E-post</label>
-      <input type="email" name="E-post">
+      <input type="email" name="Epost">
 
       <label>Melding</label>
       <textarea name="Melding">Jeg støtter oppropet for å bevare gangbrua.</textarea>
@@ -351,11 +348,15 @@
       <button class="submit-button" type="submit">
         Send signatur
       </button>
+
+      <p id="formMessage" class="small-text"></p>
     </form>
   </div>
 </div>
 
 <script>
+const GOOGLE_SCRIPT_URL = "LIM_INN_GOOGLE_SCRIPT_URL_HER";
+
 function openModal() {
   document.getElementById("signupModal").style.display = "block";
 }
@@ -364,17 +365,39 @@ function closeModal() {
   document.getElementById("signupModal").style.display = "none";
 }
 
-function disableSubmitButton(form) {
-  const button = form.querySelector(".submit-button");
-  button.disabled = true;
-  button.innerText = "Sender...";
-}
-
 window.onclick = function(event) {
   if (event.target === document.getElementById("signupModal")) {
     closeModal();
   }
 }
+
+document.getElementById("signForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const button = form.querySelector(".submit-button");
+  const message = document.getElementById("formMessage");
+
+  button.disabled = true;
+  button.innerText = "Sender...";
+  message.innerText = "";
+
+  const data = {
+    Navn: form.querySelector('[name="Navn"]').value,
+    Epost: form.querySelector('[name="Epost"]').value,
+    Melding: form.querySelector('[name="Melding"]').value
+  };
+
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify(data)
+  });
+
+  form.reset();
+  button.innerText = "Sendt";
+  message.innerText = "Takk! Signaturen din er registrert.";
+});
 </script>
 
 </body>
