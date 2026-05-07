@@ -3,78 +3,178 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bevar/retabler gangbrua ved Rønningen skole</title>
+<title>Bevar gangbroen ved Rønningen skole</title>
 
 <style>
-  body { margin:0; font-family:Arial,sans-serif; background:#f7f5f0; color:#1f1f1f; }
-  header { background:white; text-align:center; padding:40px 20px 60px; border-bottom:1px solid #ddd; }
-  .logo { width:300px; max-width:90%; margin-bottom:25px; }
-  h1 { font-size:46px; margin:10px 0; }
-  h2 { font-size:30px; text-align:center; }
-  p { max-width:760px; margin:12px auto; line-height:1.6; font-size:18px; }
-
-  .button, .submit-button {
-    background:#b22222; color:white; border:none; cursor:pointer; font-weight:bold;
-    border-radius:10px;
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f5f0;
+    color: #1f1f1f;
   }
-  .button { padding:22px 36px; font-size:22px; margin-top:30px; }
-  .button:hover, .submit-button:hover { background:#8b1a1a; }
 
-  .section { padding:55px 20px; text-align:center; }
-  .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:22px; margin-top:30px; }
-  .card { background:white; width:280px; padding:24px; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,.10); }
-  .gallery img { width:330px; max-width:90%; border-radius:14px; box-shadow:0 3px 12px rgba(0,0,0,.18); }
-
-  .highlight { background:#b22222; color:white; padding:50px 20px; }
-  .highlight h2 { font-size:34px; margin-bottom:15px; }
-  .highlight p { font-size:21px; font-weight:bold; }
-
-  .timeline {
-    max-width:850px;
-    margin:30px auto 0;
-    text-align:left;
+  header {
+    background: white;
+    text-align: center;
+    padding: 40px 20px 60px;
+    border-bottom: 1px solid #ddd;
   }
-  .timeline-box {
-    background:white;
-    border-radius:14px;
-    padding:24px;
-    margin-bottom:18px;
-    box-shadow:0 3px 12px rgba(0,0,0,.10);
-  }
-  .timeline-box h3 { margin-top:0; color:#b22222; }
-  .timeline-box ul { font-size:18px; line-height:1.6; }
 
-  .link-card {
-    display:block;
-    max-width:760px;
-    margin:22px auto;
-    background:white;
-    border:2px solid #b22222;
-    border-radius:14px;
-    padding:20px;
-    text-decoration:none;
-    color:#1f1f1f;
-    box-shadow:0 3px 12px rgba(0,0,0,.12);
+  .logo {
+    width: 300px;
+    max-width: 90%;
+    margin-bottom: 25px;
   }
-  .link-card strong { color:#b22222; font-size:20px; }
 
-  footer { text-align:center; padding:35px 20px; color:#666; font-size:14px; }
+  h1 {
+    font-size: 46px;
+    margin: 10px 0;
+  }
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  p {
+    max-width: 760px;
+    margin: 12px auto;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+
+  .button {
+    display: inline-block;
+    background: #b22222;
+    color: white;
+    padding: 22px 36px;
+    border-radius: 10px;
+    font-size: 22px;
+    margin-top: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background: #8b1a1a;
+  }
+
+  .section {
+    padding: 55px 20px;
+    text-align: center;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 30px;
+  }
+
+  .card {
+    background: white;
+    width: 280px;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+  }
+
+  .gallery img {
+    width: 330px;
+    max-width: 90%;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+  }
+
+  .highlight {
+    background: #b22222;
+    color: white;
+    padding: 50px 20px;
+  }
+
+  .highlight h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+  }
+
+  .highlight p {
+    font-size: 21px;
+    font-weight: bold;
+  }
+
+  footer {
+    text-align: center;
+    padding: 35px 20px;
+    color: #666;
+    font-size: 14px;
+  }
 
   .modal {
-    display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%;
-    background:rgba(0,0,0,.6);
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
   }
+
   .modal-content {
-    background:white; max-width:520px; margin:6% auto; padding:30px;
-    border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,.3);
+    background: white;
+    max-width: 520px;
+    margin: 6% auto;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   }
+
+  .modal-content h2 {
+    margin-top: 0;
+  }
+
   input, textarea {
-    width:100%; padding:14px; margin:8px 0 16px; border:1px solid #ccc;
-    border-radius:8px; font-size:16px; box-sizing:border-box;
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
   }
-  textarea { height:120px; }
-  .close { float:right; font-size:28px; cursor:pointer; }
-  .submit-button { width:100%; padding:16px; font-size:19px; }
+
+  textarea {
+    height: 120px;
+  }
+
+  .close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .submit-button {
+    width: 100%;
+    background: #b22222;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background: #8b1a1a;
+  }
+
+  .small-text {
+    font-size: 13px;
+    color: #666;
+  }
 </style>
 </head>
 
@@ -83,7 +183,7 @@
 <header>
   <img src="logo.png" alt="Borgen Vel logo" class="logo">
 
-  <h1>Bevar og retabler gangbrua ved Rønningen skole</h1>
+  <h1>Bevar gangbroen ved Rønningen skole</h1>
 
   <p>
     Borgenveien gang- og sykkelbru er en viktig skolevei for barn og en trygg forbindelse
@@ -91,27 +191,29 @@
   </p>
 
   <p>
-    Nå vurderer Asker kommune å ikke erstatte bruelementet – saken vil avklares politisk.
+    Nå vurderer Asker kommune å rive broen – uten å erstatte den.
   </p>
 
-  <button class="button" onclick="openModal()">Signer opprop for å beholde brua, trykk her</button>
+  <button class="button" onclick="openModal()">
+    Signer opprop for å beholde broen, trykk her
+  </button>
 </header>
 
 <section class="highlight">
   <h2>Dette handler om trygghet, skolevei og nærmiljø</h2>
   <p>
-    Brua binder øvre og nedre Borgen sammen. Den brukes av barn, ungdom, foreldre,
+    Broen binder øvre og nedre Borgen sammen. Den brukes av barn, ungdom, foreldre,
     pendlere og beboere hver eneste dag.
   </p>
 </section>
 
 <section class="section">
-  <h2>Hvorfor er brua viktig?</h2>
+  <h2>Hvorfor er broen viktig?</h2>
 
   <div class="cards">
     <div class="card">
       <h3>Trygg skolevei</h3>
-      <p>Brua gir barn en tryggere vei til Rønningen skole.</p>
+      <p>Broen gir barn en tryggere vei til Rønningen skole.</p>
     </div>
 
     <div class="card">
@@ -127,51 +229,22 @@
 </section>
 
 <section class="section">
-  <h2>Bilder av gangbrua</h2>
+  <h2>Bilder av gangbroen</h2>
 
   <div class="cards gallery">
-    <img src="bro1.jpg" alt="Gangbrua ved Rønningen skole">
-    <img src="bro2.jpg" alt="Gangbrua på Borgen">
-    <img src="bro3.jpg" alt="Borgenveien gang- og sykkelbru">
+    <img src="bro1.jpg">
+    <img src="bro2.jpg">
+    <img src="bro3.jpg">
   </div>
 </section>
 
 <section class="section">
   <h2>Hva skjer nå?</h2>
 
-  <div class="timeline">
-    <div class="timeline-box">
-      <h3>Uke 18</h3>
-      <p>Brua ble påkjørt.</p>
-    </div>
-
-    <div class="timeline-box">
-      <h3>Uke 19</h3>
-      <p>Asker kommune demonterer bruelementet.</p>
-
-      <p>
-        Elisabeth Holter-Schøyen (Venstre) stilte spørsmål til administrasjonen i formannskapet.
-        Hun ba blant annet om svar på om dette er en forsikringssak, hvor store skadene er,
-        hva en ny bru vil koste, hva reparasjon vil koste, og hva det koster å heise ned
-        bruelementet og sende det til reparasjon.
-      </p>
-
-      <p>
-        Administrasjonen ved Ragnar Sand Fuglum svarte at brua tas ned denne uken, og at kommunen
-        jobber med nødvendige avklaringer før saken kommer tilbake til formannskapet.
-      </p>
-
-      <a class="link-card" href="https://www.asker.kommune.no/politikk/politiske-moter-og-dokumenter/?v=l&mid=cmhvtnf2e32y20qsl9yvq8xl0#result" target="_blank">
-        <strong>Se opptaket fra formannskapet</strong><br>
-        Klikk her for å åpne opptaket på Asker kommunes nettsider.
-      </a>
-    </div>
-
-    <div class="timeline-box">
-      <h3>Uke 20 og utover</h3>
-      <p>Mobilisering på Borgen for å bevare og retablere gangbrua.</p>
-    </div>
-  </div>
+  <p>
+    Asker kommune vurderer å fjerne gangbroen. Vi mener dette er feil prioritering
+    og at broen må bevares eller erstattes.
+  </p>
 </section>
 
 <footer>
@@ -185,7 +258,7 @@
     <h2>Signer oppropet</h2>
 
     <form action="https://formsubmit.co/styret@borgenvel.no" method="POST">
-      <input type="hidden" name="_subject" value="Signatur: Bevar gangbrua">
+      <input type="hidden" name="_subject" value="Signatur: Bevar gangbroen">
       <input type="hidden" name="_captcha" value="false">
 
       <label>Navn</label>
@@ -195,9 +268,12 @@
       <input type="email" name="E-post">
 
       <label>Melding</label>
-      <textarea name="Melding">Jeg støtter oppropet for å beholde og retablere gangbrua.</textarea>
+      <textarea name="Melding">Jeg støtter oppropet for å beholde gangbroen.</textarea>
 
-      <button class="submit-button" type="submit">Send signatur</button>
+      <button class="submit-button" type="submit">
+        Send signatur
+      </button>
+
     </form>
   </div>
 </div>
