@@ -208,6 +208,11 @@
     background: #8b1a1a;
   }
 
+  .submit-button:disabled {
+    background: #777;
+    cursor: not-allowed;
+  }
+
   .small-text {
     font-size: 13px;
     color: #666;
@@ -308,7 +313,7 @@
 
       <a class="link-card" href="https://www.asker.kommune.no/politikk/politiske-moter-og-dokumenter/?v=l&mid=cmhvtnf2e32y20qsl9yvq8xl0#result" target="_blank">
         <strong>Se opptaket fra formannskapet</strong><br>
-        Klikk her for å åpne opptaket på Asker kommunes nettsider(siste del under eventuelt).
+        Klikk her for å åpne opptaket på Asker kommunes nettsider (siste del under eventuelt).
       </a>
     </div>
 
@@ -330,7 +335,7 @@
 
     <h2>Signer oppropet</h2>
 
-    <form action="https://formsubmit.co/styret-alle@borgenvel.no" method="POST">
+    <form action="https://formsubmit.co/styret-alle@borgenvel.no" method="POST" onsubmit="disableSubmitButton(this)">
       <input type="hidden" name="_subject" value="Signatur: Bevar gangbrua">
       <input type="hidden" name="_captcha" value="false">
 
@@ -357,6 +362,12 @@ function openModal() {
 
 function closeModal() {
   document.getElementById("signupModal").style.display = "none";
+}
+
+function disableSubmitButton(form) {
+  const button = form.querySelector(".submit-button");
+  button.disabled = true;
+  button.innerText = "Sender...";
 }
 
 window.onclick = function(event) {
