@@ -440,16 +440,14 @@ document.getElementById("signForm").addEventListener("submit", function(event) {
   button.innerText = "Sendt";
   message.innerText = "Takk! Signaturen din er registrert.";
 });
-  fetch(GOOGLE_SCRIPT_URL)
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("signatureCounter").innerText =
-      data.count + " personer har signert oppropet!";
-  })
-  .catch(() => {
-    document.getElementById("signatureCounter").innerText =
-      "Støtten vokser hver dag!";
-  });
+function showCount(data) {
+  document.getElementById("signatureCounter").innerText =
+    data.count + " personer har signert oppropet!";
+}
+
+const counterScript = document.createElement("script");
+counterScript.src = GOOGLE_SCRIPT_URL + "?callback=showCount";
+document.body.appendChild(counterScript);
 </script>
 
 </body>
